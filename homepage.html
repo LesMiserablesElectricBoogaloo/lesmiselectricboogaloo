@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Les Miserables Playlist: The Electric Boogaloo</title>
+    <link rel="icon" href="http://lesmiserablesplaylist.x10host.com/music_note.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 1vw;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #323232;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        body {
+            background-color: black;
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: "Arial";
+            color: white;
+        }
+
+        #mainDiv {
+            position: relative;
+            width: 100%;
+            background-color: rgb(15, 15, 15);
+        }
+
+        #selectionDiv {
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #selectionTitle {
+            background-color: rgb(20, 20, 25);
+            text-align: left;
+            top: 0;
+            position: absolute;
+            left: 0;
+            width: 29vw;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #introButton {
+            background-color: rgb(109, 233, 109);
+            border-radius: 30%;
+            width: 10.5vw;
+            padding: 1vw;
+        }
+
+        #conclusionButton {
+            background-color: rgb(109, 233, 109);
+            border-radius: 30%;
+            width: 10.5vw;
+            padding: 1vw;
+        }
+
+        .songChoices {
+            background-color: rgb(20, 20, 25);
+            position: relative;
+            padding: 1.5vw;
+            font-size: 2vw;
+        }
+
+        .songSpan {
+            font-size: 1.5vw;
+            color: rgb(175, 175, 175);
+        }
+
+        #songsDiv {
+            background-color: rgb(10, 10, 15);
+            position: absolute;
+            right: 0;
+            width: 71vw;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #introDiv {
+            font-size: 1.5vw;
+            text-align: justify;
+            padding: 3vw;
+            display: none;
+        }
+
+        #conclusionDiv {
+            font-size: 1.5vw;
+            text-align: justify;
+            padding: 3vw;
+            display: none;
+        }
+
+        .songAnalyses {
+            font-size: 1.5vw;
+        }
+
+        .songAnalyses iframe {
+            width: 48vw;
+            height: 27vw;
+        }
+
+        .linerNotes {
+            font-size: 1.5vw;
+            text-align: justify;
+            padding: 8vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="selectionDiv">
+            <div id="selectionTitle">
+                <div style="background-color: rgb(50, 50, 60); position: relative; padding: 1.5vw; font-size: 3vw;">
+                    <h1 style="font-size: 3vw;">Les
+                        Miserables Playlist: <i>The Electric Boogaloo</i></h1><br>
+                    <div id="introButton" onclick="clickIntro()" onmouseover="mouseOverIntro()"
+                        onmouseout="mouseOutIntro()">
+                        <p style="font-size: 2vw;">Introduction</p>
+                    </div><br>
+                    <div id="conclusionButton" onclick="clickConclusion()" onmouseover="mouseOverConclusion()"
+                        onmouseout="mouseOutConclusion()">
+                        <p style="font-size: 2vw;">Conclusion</p>
+                    </div>
+                </div>
+                <p class="songChoices" onclick="clickSong[0] = true;" onmouseover="mouseOverSong[0] = true;"
+                    onmouseout="mouseOverSong[0] = false;">
+                    We're Finally Landing<br><span class="songSpan">HOME (Fantine 1)</span></p>
+                <p class="songChoices" onclick="clickSong[1] = true;" onmouseover="mouseOverSong[1] = true;"
+                    onmouseout="mouseOverSong[1] = false;">
+                    Inkwell Hell<br><span class="songSpan">Cuphead (Fantine
+                        2)</span></p>
+                <p class="songChoices" onclick="clickSong[2] = true;" onmouseover="mouseOverSong[2] = true;"
+                    onmouseout="mouseOverSong[2] = false;">
+                    Wild Horses<br><span class="songSpan">Rolling Stones (Cosette
+                        1)</span></p>
+                <p class="songChoices" onclick="clickSong[3] = true;" onmouseover="mouseOverSong[3] = true;"
+                    onmouseout="mouseOverSong[3] = false;">
+                    Alexander Hamilton<br><span class="songSpan">Lin-Manuel Miranda
+                        (Cosette 2)</span></p>
+                <p class="songChoices" onclick="clickSong[4] = true;" onmouseover="mouseOverSong[4] = true;"
+                    onmouseout="mouseOverSong[4] = false;">
+                    Let Her Go<br><span class="songSpan">Passenger (Marius 1)</span>
+                </p>
+                <p class="songChoices" onclick="clickSong[5] = true;" onmouseover="mouseOverSong[5] = true;"
+                    onmouseout="mouseOverSong[5] = false;">
+                    Phineas and Ferb Theme Song<br><span class="songSpan">Bowling
+                        for Soup (Marius 2)</span>
+                </p>
+                <p class="songChoices" onclick="clickSong[6] = true;" onmouseover="mouseOverSong[6] = true;"
+                    onmouseout="mouseOverSong[6] = false;">Octopus's Garden<br><span class="songSpan">The Beatles (St
+                        Denis 1)</span></p>
+                <p class="songChoices" onclick="clickSong[7] = true;" onmouseover="mouseOverSong[7] = true;"
+                    onmouseout="mouseOverSong[7] = false;">Uptown Girl<br><span class="songSpan">Billy Joel (St Denis
+                        2)</span></p>
+                <p class="songChoices" onclick="clickSong[8] = true;" onmouseover="mouseOverSong[8] = true;"
+                    onmouseout="mouseOverSong[8] = false;">It's Time<br><span class="songSpan">Imagine Dragons (Jean
+                        Valjean 1)</span></p>
+                <p class="songChoices" onclick="clickSong[9] = true;" onmouseover="mouseOverSong[9] = true;"
+                    onmouseout="mouseOverSong[9] = false;">Viva La Vida<br><span class="songSpan">Coldplay (Jean Valjean
+                        2)</span></p>
+            </div>
+            <div id="songsDiv">
+                <div id="introDiv">
+                    <p>157 years ago, Victor Hugo released Les Miserables to the thunderous applause of French society.
+                        Today, we release Les Miserables Version 2.0: The Electric Boogaloo to the world. Aimed at
+                        modernising the meaning of Les Miserables, this album contains a variety of music, ranging from
+                        rock to pop, all related to thematic point of Les Miserables. Specifically, this album is
+                        centred around the thematic idea of the strength of relationships between people. Be it romantic
+                        love, familial love, or even just friendship, human bonding has the power to break social and
+                        economic restraints, to create happiness, and to ultimately redeem people. Kick back, relax, and
+                        enjoy!</p>
+                </div>
+                <div id="conclusionDiv">
+                    <p>The ultimate goal of this album is to show the universal power of human bonding. A major French
+                        novel 157 years ago and popular American music from the modern day may not have much in common,
+                        but they both show how human bonding can break restraints and redeem people. The ability to bond
+                        with others is a uniquely (and powerful) part of being human. It is a, “...grand thing... to be
+                        loved! What a far grander thing it is to love” (365)!</p>
+                </div>
+                <div id="scrollTopSong0" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/hQX7Zub0ZdI" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p class="linerNotes">In the beginning of Fantine, when Jean Valjean reaches the little town of
+                        D----, Hugo uses diction to introduce the reader to a sorrowful world. He traverses throughout
+                        the street “at random”, “sad” and “humiliated”, followed by the townspeople's stares of “fear”
+                        and “distrust”. The “night”, with the “cold Alpine winds” howling in the background, is full
+                        “low clouds” (10-11). This mirrors the starting section of “We’re Finally Landing Home”. It
+                        consists of a slow tempo and moderately high pitches, which culminates into an overall sad tone.
+                        However, as the music progresses, a positive counter-melody slowly begins to develop. More
+                        positive diction is introduced as well. When Bienvenu opens the door to let Valjean in,
+                        Valjean’s face is described to have instantly lit up by the “fire”. As they feast inside on, “a
+                        soup, a few figs, green cheese”, the light of “two silver candlesticks” fill up the room
+                        (17-18). The shift in diction and tone from sadness into happiness emphasises the power of the
+                        priest’s generosity and respect towards Valjean. The bonds between people are ultimately based
+                        off such feelings.</p>
+                </div>
+                <div id="scrollTopSong1" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/l03BFd3wDaE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p class="linerNotes">
+                        Fantine's tragic story helps her bond with Valjean, which pushes him to redeem himself further.
+                        Similar to the section, Inkwell Hell maintains a heavy and dreary tone. The song achieves this
+                        through, having a slow feeling pace. One note breaks-per bar-in the backing drum beat slows the
+                        feel of the song. The song only has a few instruments which helps maintain a dreary tone. . In
+                        the beginning of the text, Fantine was a “pretty blonde” with “gold” on “her head” and “pearls
+                        in her mouth” (42). Throughout the text, Fantine goes through a slow downward spiral into
+                        misery; in The Descent Fantine had been “tried, condemned, and executed” (61). Fantine’s
+                        description serves as a dichotomy to Jean Valjean's description, who has a mostly positive
+                        description. The final description of Fantine is a contrast to her usual descriptions. This is
+                        similar to the final section of inkwell hell where the piano disappears mostly and a trumpet
+                        takes the lead, contrasting with the consistent presence of a piano. This contrast in the word
+                        choice used to describe Fantine shows the power of love. Fantine’s love for her child is very
+                        powerful, almost more powerful than reality.</p>
+                </div>
+                <div id="scrollTopSong2" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/QhwwCWkmYoc" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>Childhood living is easy to do<br>
+                        The things you wanted I bought them for you<br>
+                        Graceless lady you know who I am<br>
+                        You know I can't let you slide through my hands<br><br>
+                        Wild horses couldn't drag me away<br>
+                        Wild, wild horses couldn't drag me away<br><br>
+                        I watched you suffer a dull aching pain<br>
+                        Now you've decided to show me the same<br>
+                        No sweeping exit or offstage lines<br>
+                        Could make me feel bitter or treat you unkind<br>
+                        Wild horses couldn't drag me away<br>
+                        Wild, wild horses couldn't drag me away<br>
+                        I know I've dreamed you a sin and a lie<br>
+                        I have my freedom but I don't have much time<br>
+                        Faith has been broken tears must be cried<br>
+                        Let's do some living after we die<br><br>
+                        Wild horses couldn't drag me away<br>
+                        Wild, wild horses we'll ride them some day<br>
+                        Wild horses couldn't drag me away<br>
+                        Wild, wild horses we'll ride them some day
+                    </p>
+                    <p class="linerNotes">In the section <i>Cosette</i>, we learn that Valjean has taken it upon himself
+                        to
+                        take care of Cosette. As soon as she is removed and given a chance to play she is
+                        “inexpressibly happy with her doll and good friend” (182). This is similar to how the singer is
+                        described as he states that “Childhood living is easy to do. The things you wanted I bought them
+                        for you” tying back to when Valjean got Cosette a doll for herself. The speaker nostalgically
+                        looks back at his experience raising a child, and similarly to Valjean, appears to be thinking
+                        of this experience as if it were his own childhood. Valjean’s perspective of love changed from
+                        when he first saved her and when he brought her to the Gorbeau house. He admits that he was
+                        “cross, sullen, abstinent, ignorant, and intractable”. Yet when he saw Cosette, he felt that
+                        “his heart moved” (183). The singer also experienced something similar, and focuses all his
+                        effort into caring for his child, claiming that “Wild horses couldn’t drag me away” from her.
+                        Valjean’s love for Cosette serves as a powerful redemptive force. As he cares for her he is able
+                        to shed his life in the galleys and be happy. Hugo wrote “all that had occurred in his
+                        existence, for the last six months, led him back toward the holy injunctions of the bishop,
+                        Cosette through love” (216). Cosette’s love helped Valjean learn to love again as well as allow
+                        him to redeem himself through fulfilling Fantine’s wish and becoming a father.</p>
+                </div>
+                <div id="scrollTopSong3" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/VhinPd5RRJw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>How does a bastard, orphan, son of a whore<br>
+                        And a Scotsman, dropped in the middle of a forgotten spot<br>
+                        In the Caribbean by providence impoverished<br>
+                        In squalor, grow up to be a hero and a scholar?<br><br>
+                        The ten-dollar founding father without a father<br>
+                        Got a lot farther by working a lot harder<br>
+                        By being a lot smarter By being a self-starter<br>
+                        By fourteen, they placed him in charge of a trading charter<br><br>
+                        And every day while slaves were being slaughtered and carted away<br>
+                        Across the waves, he struggled and kept his guard up<br>
+                        Inside, he was longing for something to be a part of<br>
+                        The brother was ready to beg, steal, borrow, or barter<br><br>
+                        Then a hurricane came, and devastation reigned<br>
+                        Our man saw his future drip, dripping down the drain<br>
+                        Put a pencil to his temple, connected it to his brain<br>
+                        And he wrote his first refrain, a testament to his pain<br><br>
+                        Well, the word got around, they said, this kid is insane, man<br>
+                        Took up a collection just to send him to the mainland<br>
+                        Get your education, don't forget from whence you came<br>
+                        And the world is gonna know your name<br>
+                        What's your name, man?<br><br>
+                        Alexander Hamilton<br>
+                        My name is Alexander Hamilton<br>
+                        And there's a million things I haven't done<br>
+                        But just you wait, just you wait<br><br>
+                        When he was ten his father split, full of it, debt-ridden<br>
+                        Two years later, see Alex and his mother bed-ridden<br>
+                        Half-dead sittin' in their own sick, the scent thick<br><br>
+                        And Alex got better but his mother went quick<br><br>
+                        Moved in with a cousin, the cousin committed suicide<br>
+                        Left him with nothin' but ruined pride, something new inside voice saying<br>
+                        Alex, you gotta fend for yourself<br><br>
+                        He started retreatin' and readin' every treatise on the shelf<br><br>
+                        There would have been nothin' left to do for someone less astute<br>
+                        He woulda been dead or destitute without a cent of restitution<br>
+                        Started workin', clerkin' for his late mother's landlord<br>
+                        Tradin' sugar cane and rum and all the things he can't afford<br>
+                        Scammin' for every book he can get his hands on<br>
+                        Plannin' for the future see him now as he stands on the bow of a ship headed for a new land<br>
+                        In New York you can be a new man<br><br>
+                        In New York you can be a new man<br>
+                        In New York you can be a new man<br>
+                        In New York you can be a new man<br>
+                        In New York you can be a new man<br>
+                        Just you wait<br><br>
+                        Alexander Hamilton<br><br>
+                        We are waiting in the wings for you<br><br>
+                        You could never back down<br>
+                        You never learned to take your time<br><br>
+                        Oh, Alexander Hamilton<br><br>
+                        When America sings for you<br>
+                        Will they know what you overcame?<br>
+                        Will they know you rewrote your game?<br>
+                        The world will never be the same, oh<br><br>
+                        The ship is in the harbor now<br>
+                        See if you can spot him<br><br>
+                        Another immigrant comin' up from the bottom<br><br>
+                        His enemies destroyed his rep America forgot him<br><br>
+                        We fought with him<br><br>
+                        Me, I died for him<br><br>
+                        Me, I trusted him<br><br>
+                        Me, I loved him<br><br>
+                        And me, I'm the damn fool that shot him<br><br>
+                        There's a million things I haven't done<br>
+                        But just you wait<br><br>
+                        What's your name, man?<br><br>
+                        Alexander Hamilton<br>
+                    </p>
+                    <p class="linerNotes">
+                        Although society is extremely harsh, it can have moments of kindness towards an individual. Jean
+                        Valjean, a convict condemned to life imprisonment, saves a man stuck on a ship mask. The crowd
+                        that gathered around, “cried… hugged each other on the wharves… voices were heard exclaiming
+                        ‘This man must be pardoned’” (146). Alexander Hamilton grew up as an outcast in Caribbean
+                        society, because he was, “... a bastard, orphan, son of a whore“. However, by reading and
+                        working extremely hard, he became wealthy in knowledge. The people on his island noticed that he
+                        was, “... insane, man. / Took up a collection and sent him to the mainland. / ‘Get your
+                        education. Don’t forget where you came from’”. Society’s harshness is the primary focus of both
+                        pieces of media. However, society does express moments of kindness and mercy towards Valjean and
+                        Hamilton, almost like a redemption for its previous cruelness. Although society can lean towards
+                        evilness, it is not inherently evil. A society can be redeemed through its bonds to an
+                        individual.</p>
+                </div>
+                <div id="scrollTopSong4" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/RBumgq5yVrA" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>Well you only need the light when it's burning low<br>
+                        Only miss the sun when it starts to snow<br>
+                        Only know you love her when you let her go<br>
+                        Only know you've been high when you're feeling low<br>
+                        Only hate the road when you're missing home<br>
+                        Only know you love her when you let her go<br>
+                        And you let her go<br><br>
+                        Staring at the bottom of your glass<br>
+                        Hoping one day you'll make a dream last<br>
+                        But dreams come slow and they go so fast<br>
+                        You see her when you close your eyes<br>
+                        Maybe one day you'll understand why<br>
+                        Everything you touch surely dies<br><br>
+                        'Cause you only need the light when it's burning low<br>
+                        Only miss the sun when it starts to snow<br>
+                        Only know you love her when you let her go<br>
+                        Only know you've been high when you're feeling low<br>
+                        Only hate the road when you're missing home<br>
+                        Only know you love her when you let her go<br><br>
+                        Staring at the ceiling in the dark<br>
+                        Same old empty feeling in your heart<br>
+                        Love comes slow and it goes so fast<br>
+                        Well you see her when you fall asleep<br>
+                        But never to touch and never to keep<br>
+                        'Cause you loved her too much and you dive too deep<br><br>
+                        'Cause you only need the light when it's burning low<br>
+                        Only miss the sun when it starts to snow<br>
+                        Only know you love her when you let her go<br>
+                        Only know you've been high when you're feeling low<br>
+                        Only hate the road when you're missing home<br>
+                        Only know you love her when you let her go<br>
+                        And you let her go<br>
+                        Oh oh oh no<br>
+                        And you let her go<br>
+                        Oh oh oh no<br>
+                        And you let her go<br><br>
+                        Well, you only need the light when it's burning low<br>
+                        Only miss the sun when it starts to snow<br>
+                        Only know you love her when you let her go<br>
+                        Only know you've been high when you're feeling low<br>
+                        Only hate the road when you're missing home<br>
+                        Only know you love her when you let her go<br><br>
+                        'Cause you only need the light when it's burning low<br>
+                        Only miss the sun when it starts to snow<br>
+                        Only know you love her when you let her go<br>
+                        Only know you've been high when you're feeling low<br>
+                        Only hate the road when you're missing home<br>
+                        Only know you love her when you let her go<br>
+                        And you let her go<br>
+                    </p>
+                    <p class="linerNotes">The idea of <i>Let Her Go</i> by Passenger matches the idea of submission that
+                        comes from multiple relationships formed between characters in Les Miserables, specifically
+                        between Monsieur Gillenormand and Marius and between Jean Valjean and Cosette.<br><br>
+                        Gillenormand and Valjean have similar roles to Marius and Cosette; they are both overprotective
+                        and dominating over their children. In the song, the line, “…never to touch and never to keep
+                        ‘cause you loved her too much and you dive too deep” parallels the story, in which both
+                        Gillenormand and Valjean, as the song puts it, “dived too deep” with their relationship with
+                        their children, dictating their children for their own benefit. In attempt to keep his love and
+                        obedience, Gillenormand prevents Marius from ever finding out about his dad and tries to dictate
+                        his political views while similarily Valjean tries to close off Cosette from society, mostly in
+                        an attempt to prevent her from leaving him to be with someone else.<br><br>
+                        However, both Monsieur Gillenormand and Jean Valjean eventually “let them go”, as the song says
+                        multiple times, and allow them to be free and happy by themselves. This submission is depicted
+                        in the song in the final lyric, which is sung in a defeated tone, “and you let her go”. This
+                        action of letting go of their beloved children characterises them as good fathers who put their
+                        children’s happiness before their own. Ultimately, both the song and the book represent the idea
+                        of submission and letting go in a relationship in order to allow for more freedom (and thus
+                        happiness) for the people involved.
+                    </p>
+                </div>
+                <div id="scrollTopSong5" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/Xf3mRZ7SHu0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>There's 104 days of summer vacation<br>
+                        And school comes along just to end it<br>
+                        So the annual problem for our generation<br>
+                        Is finding a good way to spend it<br><br>
+                        Like maybe...<br>
+                        Building a rocket<br>
+                        Or fighting a mummy<br>
+                        Or climbing up the Eiffel Tower<br><br>
+                        Discovering something that doesn't exist (Hey! )<br>
+                        Or giving a monkey a shower<br><br>
+                        Surfing tidal waves<br>
+                        Creating nanobots<br>
+                        Or locating Frankenstein's brain (It's over here! )<br><br>
+                        Finding a dodo bird<br>
+                        Painting a continent<br>
+                        Or driving your sister insane (Phineas! )<br><br>
+                        As you can see<br>
+                        There's a whole lot of stuff to do<br>
+                        Before school starts this fall (Come on Perry)<br><br>
+                        So stick with us 'cause Phineas and Ferb<br>
+                        Are gonna do it all<br>
+                        So stick with us 'cause Phineas and Ferb are<br>
+                        Gonna do it all!<br>
+                        (Mom! Phineas and Ferb are making a title sequence! )<br>
+                    </p>
+                    <p class="linerNotes">The ideas of liberty are exemplified through characterisation throughout the
+                        book. Éponine tells Marius, the love of her life, that his friends are starting a revolution at
+                        a barricade, and Marius leaves to go join them. Later, when the members of the Friends of ABC
+                        start to go to the barricades, Éponine asks Courfeyrac for, “‘Monsieur Marius, if you please.’
+                        ‘He is not in. As for myself, I shall not be in. I am going to the barricades.’ ‘Do you want me
+                        to go with you?’ ‘As you wish. The road is free and the street belongs to everyone.’ He had
+                        perceived the young man had in fact followed him” (416). In order to be with Marius, Éponine
+                        takes matters in her own hands. This and the dialogue characterises Éponine as a “free-willed”
+                        soul. This is especially evident with her walking on the road, which is symbolic of freedom.
+                        Ultimately, this leads to Éponine’s redemption, which is dying at the barricades by taking a
+                        bullet for Marius. For Phineas and Ferb, a problem they have is finding a, “...good way to spend
+                        [summer]. / Like maybe / Building a rocket or fighting a mummy / Discovering something that
+                        doesn’t exist…” Due to the fact that school is no longer a restriction on them, Phineas and Ferb
+                        can spend their time exploring their freedom, which characterises them as free-willed. For
+                        Phineas, Ferb, and Éponine, their free spirited nature allows them to explore their bonds with
+                        other people. For Éponine, it is her love for Marius, and for Phineas, it is his brotherly love
+                        for Ferb.</p>
+                </div>
+                <div id="scrollTopSong6" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/De1LCQvbqV4" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>I'd like to be under the sea<br>
+                        In an octopus' garden in the shade<br>
+                        He'd let us in, knows where we've been<br>
+                        In his octopus' garden in the shade<br><br>
+                        I'd ask my friends to come and see<br>
+                        An octopus' garden with me<br>
+                        I'd like to be under the sea<br>
+                        In an octopus' garden in the shade.<br><br>
+                        We would be warm below the storm<br>
+                        In our little hideaway beneath the waves<br>
+                        Resting our head on the sea bed<br>
+                        In an octopus' garden near a cave<br><br>
+                        We would sing and dance around<br>
+                        Because we know we can't be found<br>
+                        I'd like to be under the sea<br>
+                        In an octopus' garden in the shade<br><br>
+                        We would shout and swim about<br>
+                        The coral that lies beneath the waves<br>
+                        (Lies beneath the ocean waves)<br>
+                        Oh what joy for every girl and boy<br>
+                        Knowing they're happy and they're safe<br>
+                        (Happy and they're safe)<br><br>
+                        We would be so happy you and me<br>
+                        No one there to tell us what to do<br>
+                        I'd like to be under the sea<br>
+                        In an octopus' garden with you.<br>
+                    </p>
+                    <p class="linerNotes">The motif of garden is used throughout the book as a symbol for the human
+                        soul, although the exact aspect of the soul the garden represents depends on the character
+                        present in the garden. For Cosette and Marius, the garden represents the the soul’s ability to
+                        bond with others. Marius tries to be with Cosette, but he fears being seen by Jean. However,
+                        they finally meet alone in her garden. There, Cosette embraces Marius with, “...one kiss. They
+                        looked at each other with brilliant eyes. These two beings, pure as spirits, told each other all
+                        of their dreams… They have confided to each other in an intimacy of the ideal…” (369-370).
+                        Ringo, from the Beatles, similarly wants to bond with his friends, “...In an octopus’ garden
+                        near the sea. / We would sing and dance around / Because we know we can’t be found.” The privacy
+                        of the garden shields them away from others, which is symbolic of the idea of society and
+                        intimacy. It is hard to intimately bond with others because of societal pressures, and for
+                        Marius specifically, his main pressure is Jean.</p>
+                </div>
+                <div id="scrollTopSong7" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/hCuMWrfXG4E" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>Uptown girl<br>
+                        She's been living in her uptown world<br>
+                        I bet she's never had a backstreet guy<br>
+                        I bet her mama never told her why<br><br>
+                        I'm gonna try for an uptown girl<br>
+                        She's been living in her white bread world<br>
+                        As long as anyone with hot blood can<br>
+                        And now she's looking for a downtown man<br>
+                        That's what I am<br><br>
+                        And when she knows<br>
+                        What she wants from her time<br>
+                        And when she wakes up<br>
+                        And makes up her mind<br><br>
+                        She'll see I'm not so tough<br>
+                        Just because<br>
+                        I'm in love with an uptown girl<br>
+                        You know I've seen her in her uptown world<br>
+                        She's getting tired of her high class toys<br>
+                        And all her presents from her uptown boys<br>
+                        She's got a choice<br><br>
+                        Uptown girl<br>
+                        You know I can't afford to buy her pearls<br>
+                        But maybe someday when my ship comes in<br>
+                        She'll understand what kind of guy I've been<br>
+                        And then I'll win<br><br>
+                        And when she's walking<br>
+                        She's looking so fine<br>
+                        And when she's talking<br>
+                        She'll say that she's mine<br><br>
+                        She'll say I'm not so tough<br>
+                        Just because<br>
+                        I'm in love<br>
+                        With an uptown girl<br>
+                        She's been living in her white bread world<br>
+                        As long as anyone with hot blood can<br>
+                        And now she's looking for a downtown man<br>
+                        That's what I am<br><br>
+                        Uptown girl<br>
+                        She's my uptown girl<br>
+                        You know I'm in love<br>
+                        With an uptown girl<br>
+                        My uptown girl<br>
+                        You know I'm in love<br>
+                        With an uptown girl<br>
+                        My uptown girl<br>
+                        You know I'm in love<br>
+                        With an uptown girl<br>
+                        My uptown girl<br>
+                        You know I'm in love<br>
+                        With an uptown girl<br>
+                    </p>
+                    <p class="linerNotes">Throughout the passage, the motif of class differences in relationships plays
+                        a key role in developing the idea that relationships between people should be beyond just social
+                        status. Monsieur Madeleine, a mayor, dedicated himself to Fantine, a lowly prostitute. Bishop
+                        Myriel protected and guided Jean, an ex-convict. Marius, a man from a wealthy family, wishes to
+                        marry Cosette, the “daughter” of a lower class man. His grandfather questions if, “‘...the girl
+                        is rich? No dowry?’ ‘No.’ ‘Pttt.’ ‘Allow me to marry her.’ ‘Never’” (394-395). Billy Joel, a
+                        working class man, also wishes to be with someone of a different class. Specifically, he wants
+                        to be with an, “Uptown girl. / I’ve bet she’s never been with a backstreet boy. / I bet her
+                        mamma never told her why. / I’m in love with an upstreet girl.” The social connotations of
+                        having a relationship between a rich person and a poor person are immense. Marius’ grandfather’s
+                        scoffs at the idea. Joel states that such a relationship is pretty rare, so it is implied that
+                        there are many social barriers. However, relationships are not all about social class.
+                        Relationships should exist because of the feelings between two people.</p>
+                </div>
+                <div id="scrollTopSong8" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/sENM2wA_FTg" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>So this is what you meant<br>
+                        When you said that you were spent<br>
+                        And now it's time to build from the bottom of the pit, right to the top<br>
+                        Don't hold back<br>
+                        Packing my bags and giving the Academy a rain check<br><br>
+                        I don't ever want to let you down<br>
+                        I don't ever want to leave this town<br>
+                        'Cause after all<br>
+                        This city never sleeps at night<br><br>
+                        It's time to begin, isn't it?<br>
+                        I get a little bit bigger but then I'll admit<br>
+                        I'm just the same as I was<br>
+                        Now don't you understand<br>
+                        I'm never changing who I am<br><br>
+                        So this is where you fell<br>
+                        And I am left to sell<br>
+                        The path to heaven runs through miles of clouded hell right to the top<br>
+                        Don't look back<br>
+                        Turning to rags and giving the commodities a rain check<br><br>
+                        I don't ever want to let you down<br>
+                        I don't ever want to leave this town<br>
+                        'Cause after all<br>
+                        This city never sleeps at night<br><br>
+                        It's time to begin, isn't it?<br>
+                        I get a little bit bigger but then I'll admit<br>
+                        I'm just the same as I was<br>
+                        Now don't you understand<br>
+                        I'm never changing who I am<br><br>
+                        It's time to begin, isn't it?<br>
+                        I get a little bit bigger but then I'll admit<br>
+                        I'm just the same as I was<br>
+                        Now don't you understand<br>
+                        I'm never changing who I am<br><br>
+                        This road never looked so lonely<br>
+                        This house doesn't burn down slowly<br>
+                        To ashes<br>
+                        To ashes<br><br>
+                        It's time to begin, isn't it?<br>
+                        I get a little bit bigger but then I'll admit<br>
+                        I'm just the same as I was<br>
+                        Now don't you understand<br>
+                        I'm never changing who I am<br><br>
+                        It's time to begin, isn't it?<br>
+                        I get a little bit bigger but then I'll admit<br>
+                        I'm just the same as I was<br>
+                        Now don't you understand<br>
+                        I'm never changing who I am<br>
+                    </p>
+                    <p class="linerNotes">The song <i>Its Time</i> begins with a character giving up on his good school
+                        life, saying “I get a little bit bigger but then I’ll admit, I’m just the same as I was”. He was
+                        “spent” and feels like “…giving the academy a raining check”, which means he wants to leave. He
+                        seems to realize that “...after all, this city never sleeps at night” and that everybody spends
+                        too much studying. If he drops out, he realises his life would be that “this road never looked
+                        so lonely”, and that everything he worked for would ultimately lead to unhappiness, he also says
+                        multiple times, “I’m never changing who I am”, showing that he does not have the courage to
+                        change who he is despite the situation. This is partly due to the fact that he “…don’t ever want
+                        to let you [the singer’s parents] down”.<br><br>
+                        After Javert is spared by Jean Valjean, he struggles between the fact that there is something
+                        above love, specifically the mercy and love Jean gives him, and the supreme authority of the
+                        law. He felt, “…that duty was growing weaker in his conscience” (530). Javert seems to question
+                        if, similar to the character in the song, that he will ever be able to change, as his primary
+                        fear is the two roads, “…before him… he saw two, and that terrified him” (530). This is symbolic
+                        of Javert’s dilemma. After much self-reflection, he accepts that “...there is then something
+                        more than duty” (531). Rather than changing his ways, Javert choose death. He rejects change,
+                        but because he realises his previous beliefs could not hold, he had to die.<br><br>
+                        The similar struggles felt by both Javert and the character in <i>Its Time</i> comes together to
+                        emphasize this rejection of change. Both show the power of relationships. For the character in
+                        Its Time, the power of his bonds to his parents makes him choose to stay in college, perhaps for
+                        the better as he avoided the “lonely” road. Although the love and mercy Jean shows to Javert
+                        ended in Javert rejecting this possibility of change, this still had a drastic effect on Javert,
+                        who spent his entire life living under his devout law. The power of love and human contact can
+                        move someone seemingly lacking emotion for their entire lives, to consider a new approach, and
+                        although this approach was death, it was a new approach nonetheless.
+                    </p>
+                </div>
+                <div id="scrollTopSong9" class="songAnalyses">
+                    <iframe src="https://www.youtube.com/embed/dvgZkm1xWPE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p>
+                        <br>I used to rule the world<br>
+                        Seas would rise when I gave the word<br>
+                        Now in the morning, I sleep alone<br>
+                        Sweep the streets I used to own<br><br>
+                        I used to roll the dice<br>
+                        Feel the fear in my enemy's eyes<br>
+                        Listen as the crowd would sing<br>
+                        Now the old king is dead! Long live the king!<br><br>
+                        One minute I held the key<br>
+                        Next the walls were closed on me<br>
+                        And I discovered that my castles stand<br>
+                        Upon pillars of salt and pillars of sand<br><br>
+                        I hear Jerusalem bells are ringing<br>
+                        Roman Cavalry choirs are singing<br>
+                        Be my mirror, my sword and shield<br>
+                        My missionaries in a foreign field<br>
+                        For some reason I can't explain<br>
+                        Once you go there was never, never a honest word<br><br>
+                        And that was when I ruled the world<br>
+                        It was a wicked and wild wind<br>
+                        Blew down the doors to let me in<br>
+                        Shattered windows and the sound of drums<br>
+                        People couldn't believe what I'd become<br><br>
+                        Revolutionaries wait<br>
+                        For my head on a silver plate<br>
+                        Just a puppet on a lonely string<br>
+                        Oh, who would ever want to be king?<br><br>
+                        I hear Jerusalem bells are ringing<br>
+                        Roman Calvary choirs are singing<br>
+                        Be my mirror, my sword and shield<br>
+                        My missionaries in a foreign field<br>
+                        For some reason I can't explain<br>
+                        I know Saint Peter won't call my name<br>
+                        Never an honest word<br>
+                        But that was when I ruled the world<br><br>
+                        Oh, oh, oh, oh, oh<br><br>
+                        I hear Jerusalem bells are ringing<br>
+                        Roman Calvary choirs are singing<br>
+                        Be my mirror, my sword and shield<br>
+                        My missionaries in a foreign field<br>
+                        For some reason I can't explain<br>
+                        I know Saint Peter won't call my name<br>
+                        Never an honest word<br>
+                        But that was when I ruled the world<br>
+                    </p>
+                    <p class="linerNotes"><i>Viva La Vida</i> by Coldplay tells a very similar story to that of Jean
+                        Valjean’s
+                        path taken throughout the entirety of <i>Les Miserables.</i> The song’s lyrics begin with a
+                        character seeming to retell his life story to Jesus, starting at the moment in which he was
+                        anointed “king”. As the story progresses, the character seems to discover more and more of the
+                        evil and sin of having authority, starting at the quote “I discovered that my castles stand upon
+                        pillars of salt, pillars of sand”. The reference to salt and sand is a biblical allusion to the
+                        idea that one’s basis for a kingdom is sinful and foolish. Salt represents standing on one’s
+                        past and sand represents standing on a false lifestyle. The character seems to have resolute
+                        acceptance of this sin when he realizes he’s “just a puppet on a lonely string… who would ever
+                        want to be king?” and accepts the fact that when he “ruled the world”, God was condemning him.
+                        The song concludes with, “Saint Peter won’t call my name… but that was when I ruled the world,”
+                        using the word “but” to show that he accepted that he was in sin when he ruled the world, but he
+                        is not king anymore, so he cannot just ignore such things.<br><br>
+                        This account is very similar to the story of Jean Valjean in <i>Les Miserables</i>. Valjean,
+                        much like
+                        the character of <i>Viva La Vida</i>, felt as if he “ruled the world” at times, and throughout
+                        his
+                        experience as “king”, or in his case, a rich mayor of a small town, he was always in fear of
+                        returning to his sinful self prior to being mayor. He always wanted to keep his castles from
+                        standing on pillars of salt or sand, that is, standing on his past (the salt), or of a false
+                        lifestyle (the sand). His primary motivation was “…to close the door on his past” (89), showing
+                        a similar fear of their past selves shared between Jean Valjean and the character in the song.
+                        Both Jean Valjean and the one in Viva La Vida end their journeys never directly claiming to have
+                        been redeemed from their fear of themselves and their past evil. However, both realise their
+                        past errors and have changed. For Jean Valjean, Hugo writes that “the light from the
+                        candlesticks fell upon him… some mighty angel was standing... awaiting his soul” (594), in order
+                        to show that he was ultimately forgiven, since the candlesticks were originally used to
+                        represent the saving of Jean Valjean by the Bishop. Meanwhile, in Viva La Vida, the character
+                        asks Jesus to “Be my mirror, sword and shield”, which alludes to another instance in the Bible
+                        (Ephesians 6:10-18), which ultimately refers to these defensive tools as the word of God,
+                        protecting one from the evil of the world, especially the sin coming from temporal
+                        reign.<br><br>
+
+                        This use of similar symbolism and allusions ultimately ties together the song <i>Viva La
+                            Vida</i> and the character Jean Valjean.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var mainVar = document.getElementById("mainDiv");
+
+        var selectionVar = document.getElementById("selectionDiv");
+        var introVarButton = document.getElementById("introButton");
+        var introVar = document.getElementById("introDiv");
+        var conclusionVarButton = document.getElementById("conclusionButton");
+        var conclusionVar = document.getElementById("conclusionDiv");
+
+        var songNum = 0;
+
+        var songType = document.getElementsByClassName("songChoices");
+        var songText = document.getElementsByClassName("songAnalyses");
+
+        var songCount = 10;
+        var clicked = false;
+        var clickSong = [];
+        var mouseOverSong = [];
+        clickSong.length = songCount;
+        mouseOverSong.length = songCount;
+        clickSong.fill(false);
+        mouseOverSong.fill(false);
+
+        function clickIntro() {
+            songNum = 10;
+            introVar.style.display = "block";
+            conclusionVar.style.display = "none";
+        }
+
+        function mouseOverIntro() {
+            introVarButton.style.backgroundColor = "rgb(89, 183, 89)";
+        }
+
+        function mouseOutIntro() {
+            introVarButton.style.backgroundColor = "rgb(109, 233, 109)";
+        }
+
+
+        function clickConclusion() {
+            songNum = 10;
+            introVar.style.display = "none";
+            conclusionVar.style.display = "block";
+        }
+
+        function mouseOverConclusion() {
+            conclusionVarButton.style.backgroundColor = "rgb(89, 183, 89)";
+        }
+
+        function mouseOutConclusion() {
+            conclusionVarButton.style.backgroundColor = "rgb(109, 233, 109)";
+        }
+
+
+        function loop() {
+            setTimeout("loop()", 0);
+
+            mainVar = document.getElementById("mainDiv");
+            mainVar.style.height = mainVar.offsetWidth * (window.innerHeight / window.innerWidth) + "px";
+
+            for (var i = 0; i < songCount; i++) {
+                if (mouseOverSong[i]) {
+                    songType[i].style.backgroundColor = "black";
+                } else {
+                    songType[i].style.backgroundColor = "rgb(20, 20, 25)";
+                }
+                if (clickSong[i]) {
+                    introVar.style.display = "none";
+                    conclusionVar.style.display = "none";
+                    songNum = i;
+                    clickSong[i] = false;
+                    clicked = true;
+                }
+            }
+
+            for (var i = 0; i < songCount; i++) {
+                if (i == songNum) {
+                    continue;
+                }
+                songText[i].style.display = "none";
+            }
+            if (songNum >= 0 && songNum <= 9) {
+                songText[songNum].style.display = "block";
+                songType[songNum].style.backgroundColor = "rgb(5, 5, 10)";
+            }
+
+            if (clicked) {
+                location.href = '#scrollTopSong' + songNum;
+                clicked = false;
+            }
+        }
+        loop();
+    </script>
+</body>
+
+</html>
